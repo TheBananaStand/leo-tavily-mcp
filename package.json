@@ -1,0 +1,24 @@
+{
+  "name": "leo-tavily-mcp",
+  "version": "1.0.0",
+  "description": "Tavily web search as a Leo provider package, over MCP.",
+  "type": "module",
+  "bin": {
+    "leo-tavily-mcp": "index.js"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
