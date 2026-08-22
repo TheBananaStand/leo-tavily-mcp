@@ -1,0 +1,48 @@
+{
+  "name": "tavily-mcp",
+  "label": "Web Search (Tavily, MCP)",
+  "description": "Tavily web search, installed at runtime — no rebuild.",
+  "icon": "search",
+  "version": "1.0.0",
+  "author": "TheBananaStand",
+  "homepage": "https://github.com/TheBananaStand/leo-tavily-mcp",
+  "category": "package",
+  "mcp": {
+    "transport": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "https://github.com/TheBananaStand/leo-tavily-mcp/archive/458666526d6148fbca45f9faab3d4f499a1ee0a9.tar.gz"
+    ]
+  },
+  "descriptor": {
+    "provides": [
+      "web_search"
+    ],
+    "fields": [
+      {
+        "key": "tavily_api_key",
+        "label": "API Key",
+        "field_type": "password",
+        "required": true
+      }
+    ],
+    "entitlements": {
+      "settings_read": [
+        "tavily_api_key"
+      ],
+      "network": [
+        "api.tavily.com"
+      ],
+      "sends": [
+        {
+          "to": "api.tavily.com",
+          "classes": [
+            "search_queries"
+          ],
+          "purpose": "The search text and nothing else. Claude writes the query from your conversation, so it can quote what you said — but no transcript, file or account data is attached to it."
+        }
+      ]
+    }
+  }
+}
